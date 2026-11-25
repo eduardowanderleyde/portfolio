@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101216">
+  <meta name="description" content="Eduardo Wanderley builds AI agents, robotics tooling and production software. Explore Fleet UI, his ROS 2 research, and selected engineering projects.">
+  <meta property="og:title" content="Eduardo Wanderley | AI & Software Engineer">
+  <meta property="og:description" content="AI agents, robotics research and production software.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/fleet-ui.webp">
+  <title>Eduardo Wanderley | AI & Software Engineer</title>
+  <link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="estilo.css">
+  <script defer src="config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#work">Skip to work</a>
+  <header class="topbar">
+    <nav class="shell nav" aria-label="Main">
+      <a class="wordmark marca-texto" href="#top" aria-label="Eduardo Wanderley, home"><span aria-hidden="true">EW</span><span class="wordmark-name">Eduardo Wanderley</span></a>
+      <div class="nav-links"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
+      <a class="nav-cv" href="assets/cv/Eduardo-Wanderley-Resume.pdf" download>Résumé <span aria-hidden="true">↓</span></a>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="cine" id="opening" aria-label="Introduction">
+      <div class="cine-stage">
+        <picture class="cine-poster">
+          <source media="(max-width: 700px)" srcset="assets/frames/mobile/f_0001.webp">
+          <img src="assets/frames/desktop/f_0001.webp" alt="" fetchpriority="high" width="1440" height="900">
+        </picture>
+        <canvas class="cine-canvas" aria-hidden="true"></canvas>
+        <div class="cine-shade"></div>
+        <div class="shell cine-layout">
+          <div class="cine-text">
+            <div class="moment painel is-current" data-moment="0">
+              <p class="technical role">AI &amp; software engineer</p>
+              <h1>Eduardo<br>Wanderley<span>.</span></h1>
+              <p class="hero-description">I build AI agents, robotics tooling, and the production software that connects them.</p>
+              <a class="button button-filled" href="#work">Explore my work</a>
+            </div>
+            <div class="moment painel" data-moment="1" inert>
+              <p class="technical role">Fleet UI / Route recording</p>
+              <h2>From language<br>to motion.</h2>
+              <p class="hero-description">In Fleet UI, researchers can describe navigation experiments in plain language and run them on a simulated robot fleet.</p>
+            </div>
+            <div class="moment painel" data-moment="2" inert>
+              <p class="technical role">Fleet UI / Repeatability</p>
+              <h2>Ten replays.<br>One route.</h2>
+              <p class="hero-description">The recorded route was reproduced ten times in simulation, with a mean RMSE of 3.35 cm.</p>
+              <a class="button button-filled" href="#fleet-ui">Explore Fleet UI</a>
+            </div>
+          </div>
+          <div class="cine-meta">
+            <span class="cine-label"><b aria-hidden="true"></b> Fleet UI route visualization</span>
+            <span class="cine-progress" aria-hidden="true"><i></i><span>Scroll to trace the route</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section featured" id="work" aria-labelledby="featured-title">
+      <div class="shell" id="fleet-ui">
+        <div class="section-intro">
+          <div class="painel"><p class="technical">Featured project · Robotics research</p><h2 id="featured-title">Fleet UI</h2></div>
+          <p class="intro-summary">LLM agents for repeatable autonomous navigation experiments on simulated robot fleets.</p>
+        </div>
+        <figure class="feature-figure">
+          <img class="arte arte--fundo" src="assets/img/fleet-ui.webp" width="1400" height="800" loading="lazy" alt="Isometric illustration of a robot test environment with two rooms and overlapping route traces">
+          <figcaption><span>Route recording &amp; replay visualization</span><a class="button" href="https://www.youtube.com/watch?v=GtZP2-BW4CU">Watch the demo</a></figcaption>
+        </figure>
+        <ul class="results" aria-label="Fleet UI experiment results">
+  <li><strong>50 / 50</strong><span>optimal mission allocations by the LLM in the hardest scenario (3 robots, 10 missions); fixed dispatch was up to 106% above optimal</span></li>
+  <li><strong>3.35 cm</strong><span>mean RMSE across 10 independent replays of a recorded route (max 4.76 cm)</span></li>
+  <li><strong>1/5 → 10/10</strong><span>simultaneous multi-robot startup success after diagnosing and replacing the DDS layer</span></li></ul>
+        <div class="feature-detail painel">
+          <p>Built during my master's research at CIn-UFPE, Fleet UI brings mission planning, navigation and telemetry into a single research workflow.</p>
+          <details><summary>Engineering details</summary><ul class="bullet-list"><li>Agent layer on the Claude API: Planner, Executor and Analyst agents turn plain-language instructions into robot actions, full repeatability campaigns and diagnoses of anomalous runs, with one isolated agent per robot</li><li>Compared LLM mission allocation against fixed, greedy and optimal allocators for multi-robot missions</li><li>Record–replay protocol on TurtleBot4 robots with ROS 2 Jazzy, Nav2 and SLAM Toolbox in Gazebo, logging LiDAR, odometry, IMU and SLAM pose to MCAP bags</li><li>React + Vite interface and FastAPI backend with a ROS 2 bridge over WebSockets; pytest, GitHub Actions CI and Docker Compose for Linux and Windows</li></ul></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" aria-labelledby="projects-title">
+      <div class="shell">
+        <div class="section-intro"><h2 id="projects-title">Selected work</h2><p class="intro-summary">AI applications and operational software built around real workflows.</p></div>
+        <div class="project-grid">
+  <article class="project-card">
+    <div class="diagram retrieval" aria-hidden="true"><span></span><span></span><span></span><i></i><i></i><i></i><b></b></div>
+    <div class="project-copy painel">
+      <h3>Internal support chatbot</h3>
+      <p>AI assistant that answers internal support questions from company knowledge, using retrieval-augmented generation with semantic search and Datadog monitoring.</p>
+      <ul class="tags" aria-label="Technologies"><li>Python</li><li>LangChain</li><li>FastAPI</li><li>FAISS</li><li>PostgreSQL</li></ul>
+
+    </div>
+  </article>
+  <article class="project-card">
+    <div class="diagram fleet" aria-hidden="true"><span></span><span></span><span></span><i></i><i></i><i></i><b></b></div>
+    <div class="project-copy painel">
+      <h3>Fleet AI</h3>
+      <p>Companion system to Fleet UI that orchestrates robot-fleet missions written in Portuguese. Uses SimFleet today, with a contract toward TurtleBot4. Features a Control Center, a localhost-only API reached over SSH tunnel, and a planner that can be deterministic or use a local LLM via an OpenAI-compatible adapter (Ollama, qwen2.5:3b).</p>
+      <ul class="tags" aria-label="Technologies"><li>Python</li><li>Docker Compose</li><li>SimFleet</li><li>Ollama</li></ul>
+      <a href="https://github.com/eduardowanderleyde/fleet-ai">View on GitHub</a>
+    </div>
+  </article>
+  <article class="project-card">
+    <div class="diagram ledger" aria-hidden="true"><span></span><span></span><span></span><i></i><i></i><i></i><b></b></div>
+    <div class="project-copy painel">
+      <h3>Engeletra ERP</h3>
+      <p>Vertical ERP for industrial electrical maintenance with 10+ modules, used by about 10 people: quotes with per-invoice taxes, work orders, electrical tests, technical reports, billing and finance.</p>
+      <ul class="tags" aria-label="Technologies"><li>Electron</li><li>React</li><li>FastAPI</li><li>PostgreSQL</li><li>SQLAlchemy</li></ul>
+
+    </div>
+  </article></div>
+        <details class="more-work"><summary>More projects</summary><div>
+  <article class="other-project">
+    <h3>Wi-Fi Mesh test environment</h3>
+    <div><p>Reconfigurable testbed where mobile robots carry Mesh routers while Raspberry Pi Zero 2 W boards collect signal, handover and latency data. Published at SBES 2025.</p>
+      <a href="https://doi.org/10.5753/sbes.2025.11613">Read the paper</a></div>
+  </article>
+  <article class="other-project">
+    <h3>Casa Bacurau</h3>
+    <div><p>Website presenting the services and venue of a cultural space in Recife, with a responsive interface focused on usability.</p>
+      <a href="https://casabacurau.com.br/">Visit the site</a></div>
+  </article>
+  <article class="other-project">
+    <h3>Cais do Sertão ticketing</h3>
+    <div><p>Ticketing and management system for a museum: sales, free admissions, group visits, role-based access and reports exported to Excel and CSV.</p>
+      </div>
+  </article>
+  <article class="other-project">
+    <h3>Acende Pavio store</h3>
+    <div><p>Online store with catalog, cart, orders and an admin panel, with Mercado Pago payments and shipping quotes by postal code. Current implementation in Node.js/Express with Prisma and MySQL, hosted on Hostinger.</p>
+      <a href="https://acendepavio.com">Visit the site</a></div>
+  </article>
+  <article class="other-project">
+    <h3>Educational data mining</h3>
+    <div><p>Modeled school performance across ~5,500 Brazilian municipalities (SAEB) with logistic regression and decision trees, turning results into rules education managers can act on.</p>
+      </div>
+  </article></div></details>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="shell split-section">
+        <div class="painel"><h2 id="experience-title">Experience</h2><p class="intro-summary">Software delivery across research, industry, and public services.</p><a class="button" href="assets/cv/Eduardo-Wanderley-Resume.pdf" download>Download résumé</a></div>
+        <div class="timeline painel">
+  <details class="job" open>
+    <summary><span><strong>ERP Developer (Freelance)</strong><span>Engeletra</span></span><time>May 2026 – Present</time></summary>
+    <ul class="bullet-list"><li>Designed and built the company ERP, in daily use by its team: a vertical system for industrial electrical maintenance with 10+ operational modules on Electron, React and FastAPI</li><li>Modeled the end-to-end flow from service request and quote (with per-invoice taxes) to work order, electrical tests, technical report, billing and finance</li><li>Structured the domain on PostgreSQL 17, SQLAlchemy 2 and Alembic, with accounts receivable/payable, payment forecasting and payroll</li></ul>
+    <ul class="tags" aria-label="Technologies"><li>Electron</li><li>React</li><li>FastAPI</li><li>PostgreSQL</li></ul>
+  </details>
+  <details class="job">
+    <summary><span><strong>Systems Analyst</strong><span>Empetur (Government of Pernambuco)</span></span><time>Sep 2025 – Present</time></summary>
+    <ul class="bullet-list"><li>Develops and maintains the corporate intranet in Next.js, including a ticketing module for administrative departments</li><li>Administers on-premises Windows Server and Ubuntu Server, Docker containers, Active Directory, Samba and PostgreSQL/MySQL databases</li><li>Built Python services that collect infrastructure metrics into management dashboards, and API integrations between departments</li></ul>
+    <ul class="tags" aria-label="Technologies"><li>Next.js</li><li>Docker</li><li>Linux</li><li>Active Directory</li></ul>
+  </details>
+  <details class="job">
+    <summary><span><strong>Systems Analyst / Data Engineer</strong><span>Campello &amp; Siqueira</span></span><time>Jan 2024 – Apr 2025</time></summary>
+    <ul class="bullet-list"><li>Led ETL pipelines and data models for financial and operational dashboards</li><li>Built Apache Airflow DAGs with SLAs, alerts and reprocessing for daily critical data</li><li>Optimized SQL on BigQuery and PostgreSQL and added data-quality validation before publishing</li></ul>
+    <ul class="tags" aria-label="Technologies"><li>Airflow</li><li>BigQuery</li><li>PostgreSQL</li><li>ETL</li></ul>
+  </details>
+  <details class="job">
+    <summary><span><strong>Systems Analyst (Resident)</strong><span>Softex residency at UFPE</span></span><time>Jan 2023 – Jan 2024</time></summary>
+    <ul class="bullet-list"><li>Created a dataset and computer-vision model that detects tubes, trays and holes and guides a robotic arm placing tubes into trays</li><li>Built Flask backends with REST APIs and WebSockets for real-time telemetry of robotic systems</li><li>Developed the Flutter frontend of an app to control a Kinova robotic arm</li></ul>
+    <ul class="tags" aria-label="Technologies"><li>Computer Vision</li><li>Flask</li><li>WebSockets</li><li>Flutter</li></ul>
+  </details>
+  <details class="job">
+    <summary><span><strong>Software Developer (Freelance)</strong><span>C.E.S.A.R, Hospital Português and others</span></span><time>Feb 2020 – Nov 2022</time></summary>
+    <ul class="bullet-list"><li>Delivered web applications with automated reports and data-driven user profiles</li><li>Ran requirements gathering, functional documentation and incremental delivery with technical and business stakeholders</li></ul>
+    <ul class="tags" aria-label="Technologies"><li>Web</li><li>Requirements</li></ul>
+  </details></div>
+      </div>
+    </section>
+
+    <section class="section profile" id="about" aria-labelledby="profile-title">
+      <div class="shell profile-layout">
+        <div class="portrait"><img class="arte arte--esquerda" src="assets/img/eduardo.webp" width="161" height="190" loading="lazy" alt="Portrait of Eduardo Wanderley"></div>
+        <div class="profile-copy painel">
+          <p class="technical">Based in Recife, Brazil</p>
+          <h2 id="profile-title">About me</h2>
+          <p>I work across AI, robotics, and full-stack engineering. I’ve shipped ERPs, intranets, APIs, and data pipelines alongside research on autonomous navigation and multi-robot systems.</p>
+          <details><summary>Technical skills</summary><dl class="toolbox"><div><dt>AI &amp; data</dt><dd>LLM agents, Claude API, OpenAI API, LangChain, RAG (FAISS), Computer vision, Airflow, PySpark, Pandas</dd></div><div><dt>Languages</dt><dd>Python, SQL, TypeScript, JavaScript, Kotlin, Ruby</dd></div><div><dt>Backend</dt><dd>FastAPI, Flask, Node.js, Ruby on Rails, SQLAlchemy, REST, WebSockets, JWT</dd></div><div><dt>Frontend</dt><dd>React, Next.js, Tailwind CSS, Electron, Flutter</dd></div><div><dt>Robotics</dt><dd>ROS 2, Nav2, SLAM, Gazebo, Arduino</dd></div><div><dt>Databases</dt><dd>PostgreSQL, MySQL, BigQuery, MongoDB, SQLite, Alembic</dd></div><div><dt>Infra &amp; DevOps</dt><dd>Docker, Linux, Windows Server, Active Directory, GCP, AWS, CI/CD, Datadog</dd></div><div><dt>Engineering</dt><dd>Software architecture, Data modeling, Requirements, Process mapping, Legacy systems</dd></div><div><dt>Spoken languages</dt><dd>Portuguese (native), English (fluent), Spanish (B1), German (A1)</dd></div></dl></details>
+          <details><summary>Education &amp; publication</summary><ul class="education">
+  <li><strong>M.Sc. in Computer Science</strong><span>CIn, Federal University of Pernambuco (UFPE) / 2024 – 2026, expected Dec 2026</span></li>
+  <li><strong>Graduate certificate in Robotics and AI applied to software testing</strong><span>CIn, UFPE / 2023</span></li>
+  <li><strong>Technologist in Internet Systems</strong><span>Catholic University of Pernambuco (UNICAP) / 2021 – 2022</span></li>
+  <li><strong>B.Eng. in Automation and Control Engineering</strong><span>University of Pernambuco (UPE) / 2011 – 2021</span></li>
+  <li><strong>Lived in Leipzig, Germany; English studies in London and Vancouver</strong><span>International experience</span></li></ul><p class="paper"><a href="https://doi.org/10.5753/sbes.2025.11613">Mobile Robotics for Throughput Testing in a Reconfigurable Test Environment</a><span>Eduardo Araújo and Breno Miranda · SBES 2025</span></p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="shell split-section contact-layout">
+        <div class="painel">
+          <h2 id="contact-title">Get in touch</h2>
+          <p class="intro-summary">For AI engineering roles, software projects, or research collaborations.</p>
+          <a class="email" href="mailto:wanderley.eduardo@gmail.com">wanderley.eduardo@gmail.com</a>
+          <div class="social"><a href="https://www.linkedin.com/in/edu-wanderley">LinkedIn</a><a href="https://github.com/eduardowanderleyde">GitHub</a><a href="https://lattes.cnpq.br/4068383542057315">Lattes</a></div>
+        </div>
+        <form class="contact-form painel" action="https://formsubmit.co/wanderley.eduardo@gmail.com" method="post">
+          <input type="hidden" name="_subject" value="New message from your portfolio">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden>
+          <label>Name <input name="name" autocomplete="name" required></label>
+          <label>Email <input name="email" type="email" autocomplete="email" required></label>
+          <label>Message <textarea name="message" rows="4" required></textarea></label>
+          <button class="button button-filled" type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <a class="whatsapp button button-filled" hidden rel="noopener" target="_blank">WhatsApp</a>
+  <footer class="footer"><div class="shell"><a class="marca-texto" href="#top">Eduardo Wanderley</a><span>Recife, Brazil</span><a href="#top">Back to top</a></div></footer>
+</body>
+</html>
